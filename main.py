@@ -1,15 +1,27 @@
-box((pos = vec(0,0,-0.1), size = vec(0.9,0.9,0.1), color = color(0,0,0))
+Web VPython 3.2
+print("Blue = 1")
+print("red = land mine")
 
 
-# 가람판 리스트
+
+
+box(pos = vec(0,0,-0.05), size = vec(0.8,0.8,0.1), color = color.red)
+box(pos = vec(0,1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(-1,1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(0,-1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(-1,0,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+
+box(pos = vec(1,1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(1,0,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(0,1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(-1,-1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
+box(pos = vec(1,-1,-0.05), size = vec(0.8,0.8,0.1), color = color.blue)
 
 boxes = []
 for i in range(-4, 4) : 
     for j in range(-4,4) : 
         
-        boxes.append(box(pos = vec(i,j,-0.1), size = vec(0.9,0.9,0.1)))
-
-
+        boxes.append(box(pos = vec(i,j,-0.1), size = vec(0.8,0.8,0.1)))
 
 # 열린판 리스트
 boxes = []
@@ -22,7 +34,9 @@ for i in range(-4, 4) :
 def on_click(evt):
     hit = scene.mouse.pick
     if hit:
-        hit.color = color.red  # 마우스 색 변경
+        hit.opacity = 0 # 마우스 색 변경
 
 scene.bind('click',on_click)
+
+
 
